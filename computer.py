@@ -26,6 +26,21 @@ class Computer:
         self.price = price    
     # What methods will you need?
 
+    def update_price(self, new_price: int):
+        self.price = new_price
+        print("Price updated to: ${self.price}")
+    
+    def update_os(self, new_os:str):
+        self.operating_system = new_os
+        print("Operating ststem updated to: {self.operating_system}")
+    
+    def refurbish(self):
+        if self.year_made < 2015:
+            self.price = 500
+        else:
+            self.price = 1000
+        print("Computer refurbished. New price: ${self.price}")
+
 def main():
     
     # First, let's make a computer
