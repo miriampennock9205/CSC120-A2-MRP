@@ -75,4 +75,5 @@ def main():
     print("Done.\n")
 
 # Calls the main() function when this file is run
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    main()

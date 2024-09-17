@@ -6,9 +6,15 @@ class ResaleShop:
        
 
     # What attributes will it need?
-
+    inventory: list
     # How will you set up your constructor?
-    # Remember: in python, all constructors have the same name (__init__)
+ # Remember: in python, all constructors have the same name (__init__)
+    def __init__(self):
+        self.inventory = []
+    # goal add c to self.inventory
+    def add (self, c):
+        self.inventory.append(c)
+
     def __init__(self):
         self.inventory: Dict[int, Computer] = {}
         self.next_id: int = 0
@@ -45,3 +51,12 @@ class ResaleShop:
             computer.refurbish()  # Adjust price based on year made
         else:
             print(f"Computer with ID {computer_id} not found.")
+
+def main():
+    myShop: ResaleShop = ResaleShop()
+    print("There are", len(myShop.inventory), "items in stock.")
+    c = "MY AWESOME COMPUTER"
+    myShop.buy(c)
+    print("There are", len(myShop.inventory), "items in stock.")
+if __name__ == "__main__":
+    main()
