@@ -3,17 +3,15 @@ from computer import Computer
 
 class ResaleShop:
     
-       
-
     # What attributes will it need?
-    inventory: list
+    # inventory: list
     # How will you set up your constructor?
  # Remember: in python, all constructors have the same name (__init__)
-    def __init__(self):
-        self.inventory = []
+   # def __init__(self):
+   #     self.inventory = []
     # goal add c to self.inventory
-    def add (self, c):
-        self.inventory.append(c)
+  #  def add (self, c):
+   #     self.inventory.append(c)
 
     def __init__(self):
         self.inventory: Dict[int, Computer] = {}
