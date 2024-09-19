@@ -51,10 +51,37 @@ class ResaleShop:
             print(f"Computer with ID {computer_id} not found.")
 
 def main():
-    myShop: ResaleShop = ResaleShop()
+    myShop = ResaleShop()
+      # Create a Computer object
+    computer = Computer(
+        description="Mac Pro (Late 2013)",
+        processor_type="3.5 GHz 6-Core Intel Xeon E5",
+        hard_drive_capacity=1024,
+        memory=64,
+        operating_system="macOS Big Sur",
+        year_made=2013,
+        price=1500
+    )
+
+    # Buy the computer and add it to inventory
+    myShop.buy(computer)
     print("There are", len(myShop.inventory), "items in stock.")
-    c = "MY AWESOME COMPUTER"
-    myShop.buy(c)
-    print("There are", len(myShop.inventory), "items in stock.")
+
+    # Print the inventory
+    myShop.print_inventory()
+
+    # Refurbish the computer with a new OS
+    myShop.refurbish(0, new_os="macOS Monterey")
+    
+    # Print the updated inventory after refurbishing
+    myShop.print_inventory()
+
+    # Sell the computer
+    myShop.sell(0)
+    print("There are", len(myShop.inventory), "items in stock after sale.")
+    
+    # Print the inventory again after selling
+    myShop.print_inventory()
+    
 if __name__ == "__main__":
     main()

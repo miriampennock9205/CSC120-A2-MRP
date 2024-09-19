@@ -28,18 +28,18 @@ class Computer:
 
     def update_price(self, new_price: int):
         self.price = new_price
-        print("Price updated to: ${self.price}")
+        print(f"Price updated to: ${self.price}")
     
     def update_os(self, new_os:str):
         self.operating_system = new_os
-        print("Operating ststem updated to: {self.operating_system}")
+        print(f"Operating system updated to: {self.operating_system}")
     
     def refurbish(self):
         if self.year_made < 2015:
             self.price = 500
         else:
             self.price = 1000
-        print("Computer refurbished. New price: ${self.price}")
+        print(f"Computer refurbished. New price: ${self.price}")
 
 def main():
     
@@ -50,8 +50,12 @@ def main():
         1024, 64,
         "macOS Big Sur", 2013, 1500
     )
+    print(f"Description: {computer.description}")
+    print(f"Initial Price: ${computer.price}")
+    computer.update_price(1200)
+    computer.update_os("macOS Monterey")
+    computer.refurbish()
 
-    print(computer.description)
 
 #Only call main() if I am running this program directly
 if __name__ == "__main__":
